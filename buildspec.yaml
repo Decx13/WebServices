@@ -22,7 +22,7 @@ phases:
 
       - echo Pushing the Docker image with blue tag to ECR if it exists...
       - docker push 339712771390.dkr.ecr.us-east-1.amazonaws.com/ecr1:blue || true
-     // - docker push 339712771390.dkr.ecr.us-east-1.amazonaws.com/ecr1:latest
+      - docker push 339712771390.dkr.ecr.us-east-1.amazonaws.com/ecr1:green
       - echo Writing image definitions file...
       - printf '[{"name":"mywebsite","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 artifacts:
